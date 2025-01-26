@@ -11,12 +11,11 @@ from constants import SYSTEM_PROMPT, INSTRUCTIONS
 # Step-2: API keys
 import os
 
-TAVILY_API_KEY = "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"  # Replace with your actual Tavily API key
-GOOGLE_API_KEY = "AIzaSyCK4rbGTOFIOLjCxj4eXihl7PzmT4ytsg4"  # Replace with your actual Google API key
 
-# Set environment variables
-os.environ["TAVILY_API_KEY"] = st.secrets[TAVILY_API_KEY]
-os.environ["GOOGLE_API_KEY"] = st.secrets[GOOGLE_API_KEY]
+
+os.environ['TAVILY_API_KEY'] = st.secrets['TAVILY_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GEMINI_KEY']
+
 
 MAX_IMAGE_WIDTH=300
 
