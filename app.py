@@ -1,23 +1,20 @@
-# Step-1: Imports
+# pip install phidata google-generativeai tavily-python
+# pip install streamlit
+
 import streamlit as st
+import os
 from PIL import Image
 from io import BytesIO
 from phi.agent import Agent
+from phi.model.google import Gemini
+from phi.tools.tavily import TavilyTools
 from tempfile import NamedTemporaryFile
-from phi.model.google import Gemini  # Requires a Google API key
-from phi.tools.tavily import TavilyTools  # Requires a Tavily API key
 from constants import SYSTEM_PROMPT, INSTRUCTIONS
-
-# Step-2: API keys
-import os
-
-
 
 os.environ['TAVILY_API_KEY'] = st.secrets['TAVILY_KEY']
 os.environ['GOOGLE_API_KEY'] = st.secrets['GEMINI_KEY']
 
-
-MAX_IMAGE_WIDTH=300
+MAX_IMAGE_WIDTH = 300
 
 def resize_image_for_display(image_file):
     """Resize image for display only, returns bytes"""
